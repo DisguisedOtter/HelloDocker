@@ -1,5 +1,5 @@
 # use a node base image
-FROM node:current-slim
+FROM node:current-buster-slim
 
 # set maintainer
 LABEL maintainer "github@patatje.eu"
