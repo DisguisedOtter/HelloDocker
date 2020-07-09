@@ -26,7 +26,7 @@ node {
     stage('Push image') {
         withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
             sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-            sh 'docker push disguisedotter/patatje-helloworld:latest'             
+            sh 'docker push patatje-helloworld:latest'             
          }
     }
 }
