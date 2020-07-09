@@ -24,8 +24,7 @@ node {
     }
 
     stage('Push image') {
-         agent any
-         steps {
+        steps {
              withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                 sh 'docker push disguisedotter/hellodocker:latest'
