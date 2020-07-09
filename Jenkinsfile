@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
-         * docker build on the command line */
+         * docker build on the command line except adding our docker hub repo in front*/
 
         app = docker.build("disguisedotter/patatje-helloworld")
     }
