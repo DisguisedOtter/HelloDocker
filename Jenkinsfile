@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("patatje-helloworld")
+        app = docker.build("disguisedotter/patatje-helloworld")
     }
 
     stage('Test image') {
@@ -26,7 +26,7 @@ node {
     stage('Push image') {
         withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
             sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-            sh 'docker push patatje-helloworld:latest'             
+            sh 'docker push disguisedotter/patatje-helloworld:latest'             
          }
     }
 }
